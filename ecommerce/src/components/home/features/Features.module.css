@@ -1,0 +1,42 @@
+.container{
+    .features {
+        background-color: black;
+        color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 35px ;
+    
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333;
+            border: 20px solid black;
+            flex:1;
+            gap: 10px;
+            width: 240px;
+            height: 160px;
+            border-radius: 25px;
+    
+            .icon {
+                color: #8BC34A;
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+        }
+    }
+    .sellingProducts{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 100px 0;
+
+        h2{
+            font-size: 32px;
+        }
+    }
+}
+

@@ -1,0 +1,91 @@
+.container {
+    background-color: #F8F6F3;
+    background-image: linear-gradient(#ffff, #F8F6F3);
+    .customer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px;
+
+
+        .sections{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            height: 70vh;
+            padding: 70px 30px;
+            /* background-color: #ffff; */
+
+            section{
+                border:none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 50vmin;
+                flex: 1;
+                gap: 20px;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #ffff;
+                box-shadow: 2px 2px 3px 5px #dad9d9;
+
+                .stars{
+                    color: orange;
+                    display: flex;
+                    gap: 4px;
+                    font-size: 18px;
+                }
+                p{
+                    text-align: center;
+                    line-height: 22px;
+                }
+
+                .testimage{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                }
+
+            }
+
+            .deal{
+                flex:1.1;
+                height: 70vmin;
+                text-align: center;
+                color: #ffff;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.6)),url('./deal.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                
+
+                h1{
+                    padding: 0 40px;
+                    font-weight: 900;
+                    font-size: 30px;
+                }
+                Button{
+                    margin-top: 50px;
+                }
+            }
+
+            .deal:hover{
+                opacity: 1; 
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./deal.jpg');
+                
+            }
+        }
+    }
+    .brands{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 60px 10px;
+    }
+}

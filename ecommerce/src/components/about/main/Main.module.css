@@ -1,0 +1,43 @@
+.main {
+    background-color: #ffff;
+
+    .text{
+        h1{
+            font-size: 52px;
+            text-align: center;
+            padding: 100px;
+            background-color: #F8F6F3;
+        }
+    }
+
+    .about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 100px 50px;
+        gap: 100px;
+
+        .content{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 30px;
+            line-height: 20px;
+
+            h1{
+                font-size: 34px;
+            }
+            p{
+                font-size: 16px;
+                color: #424242;
+            }
+        }
+
+        .image{
+            img{
+                width: 600px;
+            }
+        }
+    }
+}

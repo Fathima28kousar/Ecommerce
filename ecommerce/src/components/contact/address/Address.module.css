@@ -1,0 +1,67 @@
+.container{
+   
+    .address{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: pink;
+    
+        .header{
+            font-size: 24px;
+            background-color: #f8f6f3;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+    
+        .info{
+            
+            display:flex;
+            gap: 20px;
+            padding: 100px 30px 70px 30px;
+            border-radius: 10px;
+            position: absolute;
+            background-color: white; /* Add a background color to the info section */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2);
+            top: 50%; /* Adjust the top property to position the info section */
+            height: 50%;
+            
+            section{
+                border: 1px solid #ccc;
+                display:flex;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 5px;
+                width: 300px;
+                height: 150px;
+                justify-content: center;
+                gap: 2px;
+                
+                 
+                .icon{
+                    font-size: 36px;
+                    color: #8bc34a;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .faq{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 350px;
+
+        img {
+            width: 100px;
+        }
+    }
+}

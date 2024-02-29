@@ -1,0 +1,26 @@
+.counter{
+    width:100%;
+    background-color: #001524;
+    margin-bottom: 150px;
+    color:white;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    h3{
+        font-size: 20px;
+        width: 200px;
+    }
+    
+    .numbers{
+        h2{
+            font-size: 46px;
+            font-weight: 500;
+            font-family: 'Open Sans',sans-serif;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+}

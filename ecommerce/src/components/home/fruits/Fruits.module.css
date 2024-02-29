@@ -1,0 +1,80 @@
+.container {
+    background-color: #F8F6F3;
+
+    .fruits{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        flex: 1;
+        padding: 100px 50px;
+
+        section {
+            background-color: #ffff;
+            flex: 1;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            padding: 50px 20px 10px 50px;
+            gap: 10px;
+            height: 350px;
+            width: 300px;
+            line-height: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+              0 6px 12px rgba(0,0,0, 0.2);
+            border-radius: 5px;
+
+            h3,p,button{
+                position: relative;
+                z-index: 2;
+            }
+
+            img {
+                border: none;
+                object-fit: cover; 
+                z-index: 1;
+                position: absolute;
+                mix-blend-mode: multiply;
+                margin-left:80px;
+                margin-top: 80px;
+            }
+        }
+    }
+
+    .offer {
+        background-color: black;
+        color: #ffff;
+        padding: 50px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    h2{
+        text-align: center;
+        padding: 30px;
+        height: 100px;
+    }
+
+    .triangle{
+        height:0;
+        width:0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid black;
+        margin: auto;
+    }
+
+    .trendingProducts{
+        background-color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        padding: 150px 0 100px 0;
+
+        h1{
+            font-size: 36px;
+        }
+    }
+}

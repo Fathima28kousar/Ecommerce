@@ -1,0 +1,29 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 7rem 4rem;
+    background: #F8F6F3;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+
+        h5{
+            font-size: 17px;
+        }
+        h1{
+            font-size: 52px;
+        }
+        p {
+            font-size: 16px;
+            color: #333333;
+            line-height: 20px;
+            font-weight: 500;
+        }
+    }
+}
