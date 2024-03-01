@@ -1,0 +1,47 @@
+.checkout {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: space-between;
+    flex-direction: column;
+    background-color: #f8f6f4;
+    
+
+    .billingDetails{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .form{
+            width: 70%;
+            /* border: 1px solid black; */
+            padding: 50px;
+        }
+        .order{
+            width: 50%;
+            height: 100%;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-between;
+            /* align-items: flex-start; */
+            flex-direction: column;
+            align-self: flex-start;
+            background-color: pink;
+            gap: 20px;
+            padding: 20px 20px;
+            
+            table{
+                font-size: 20px;
+                font-weight: 100;
+                color
+                th{
+                    background-color: yellow;
+                    padding-right: 150px;
+                    text-align: left;
+                }
+                td{
+                    padding: 10px 0;
+                }
+            }
+        }
+    }
+}
