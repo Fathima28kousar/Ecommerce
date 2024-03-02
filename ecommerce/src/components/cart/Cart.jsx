@@ -39,62 +39,67 @@ const Cart = ({ cart, setCart }) => {
             </Link>
           </div>
         </>
-      ) : ( <div className={styles.table}>
-        <table>
-          <thead>
-            <tr>
-              <th>Image</th>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Subtotal</th>
-              <th>Delete</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.values(groupedCart).map((thing) => (
-              <tr key={thing.id} className={styles.cart}>
-                <td>
-                  <div>
-                    <img src={thing.image1} alt="" />
-                  </div>
-                </td>
-                <td>
-                  <h4>{thing.name}</h4>
-                </td>
-                <td>{thing.price}</td>
-                <td>
-                  <div>
-                    <p>{thing.quantity}</p>
-                  </div>
-                </td>
-                <td>{thing.price * thing.quantity}</td>
-                <td>
-                  <FaTrash onClick={() => removeFromCart(thing.id)} />
-                </td>
+      ) : (
+        <div className={styles.table}>
+          <table>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th>Delete</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-        <div className={styles.total}>
-          <div className={styles.subtotal}>
-            <p>Sub Total:{totalPrice}</p>
-            <p>Grand Total: {totalPrice}</p>
-            <hr/>
+            </thead>
+            <tbody>
+              {Object.values(groupedCart).map((thing) => (
+                <tr key={thing.id} className={styles.cart}>
+                  <td>
+                    <Link to={`/productDetail/${thing.id}`}>
+                      <div>
+                        <img src={thing.image1} alt="" />
+                      </div>
+                    </Link>
+                  </td>
+                  <td>
+                    <Link to={`/productDetail/${thing.id}`}>
+                      <p className={styles.thingName}>{thing.name}</p>
+                    </Link>
+                  </td>
+                  <td>{thing.price}</td>
+                  <td>
+                    <p>{thing.quantity}</p>
+                  </td>
+                  <td>{thing.price * thing.quantity}</td>
+                  <td>
+                    <FaTrash onClick={() => removeFromCart(thing.id)} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className={styles.total}>
+            <div className={styles.subtotal}>
+              <p>Sub Total:{totalPrice}</p>
+              <p>Grand Total: {totalPrice}</p>
+              <hr />
+            </div>
+            <Link
+              to={{
+                pathname: "/checkout",
+                state: { cartItems: groupedCart, totalPrice: totalPrice },
+              }}
+            >
+              <Button text="CHECKOUT" />
+            </Link>
           </div>
-          <Link to='/checkout'> <Button text="CHECKOUT" /> </Link>
-        
-      </div>
-      </div>
-        
+        </div>
       )}
-
-     
 
       {Object.values(groupedCart).length !== 0 && (
         <div>
           <Button onClick={() => setCart([])} text="CLEAR CART" />
-          
         </div>
       )}
     </div>

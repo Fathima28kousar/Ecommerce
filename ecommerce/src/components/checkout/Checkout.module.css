@@ -1,47 +1,78 @@
 .checkout {
+  display: flex;
+  padding: 20px;
+  align-items: space-between;
+  flex-direction: column;
+  background-color: #f8f6f4;
+
+  .billingDetails {
     display: flex;
-    /* justify-content: space-between; */
-    align-items: space-between;
-    flex-direction: column;
-    background-color: #f8f6f4;
-    
+    align-items: center;
+    justify-content: center;
 
-    .billingDetails{
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    .form {
+      width: 70%;
+      padding: 50px;
 
-        .form{
-            width: 70%;
-            /* border: 1px solid black; */
-            padding: 50px;
-        }
-        .order{
-            width: 50%;
-            height: 100%;
-            border: 1px solid black;
-            display: flex;
-            justify-content: space-between;
-            /* align-items: flex-start; */
-            flex-direction: column;
-            align-self: flex-start;
-            background-color: pink;
-            gap: 20px;
-            padding: 20px 20px;
-            
-            table{
-                font-size: 20px;
-                font-weight: 100;
-                color
-                th{
-                    background-color: yellow;
-                    padding-right: 150px;
-                    text-align: left;
-                }
-                td{
-                    padding: 10px 0;
-                }
-            }
-        }
+      h3{
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+      }
     }
+    .order {
+      width: 40%;
+      height: 100%;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: space-between;
+      flex-direction: column;
+      align-self: flex-start;
+      gap: 20px;
+      padding: 20px 20px;
+      font-size: 17px;
+      
+
+      table {
+        color: #3b3b3b;
+
+        .product {
+          padding-right: 300px;
+        }
+
+        .subtotal {
+            align-self: flex-end;
+        }
+
+        td {
+          padding: 10px 0;
+        }
+
+        .subTr{
+            text-align: right;
+        }
+      }
+      .total{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 120%;
+        padding: 20px 0;
+        
+        h2{
+            align-self: flex-end;
+            font-family: 'Open Sans',sans-serif;
+            font-weight: 100;
+        }
+        h3{
+            font-size: 25px;
+        }
+
+      }
+      Button{
+        width: 100%;
+        margin-top: 20px ;
+        
+    }
+    }
+  }
 }

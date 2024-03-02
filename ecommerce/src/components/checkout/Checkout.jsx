@@ -1,37 +1,54 @@
+import Button from "../home/button/Button";
 import styles from "./Checkout.module.css";
 import Form from "./Form";
 
-const Checkout = () => {
+const Checkout = (props) => {
+  const { cartItems = {} } = props.location.state || {};
+  const {totalPrice ={} } = props.location.state || {};
   return (
     <div className={styles.container}>
       <div className={styles.checkout}>
         <h1>Checkout</h1>
         <div className={styles.billingDetails}>
           <div className={styles.form}>
-            <h5>Billing details</h5>
-            <hr />
+            <h3>Billing details</h3>
             <Form />
           </div>
           <div className={styles.order}>
-            <h1>Your order</h1>
+            <h3>Your order</h3>
             <table>
+              <thead>
               <tr>
-                <th>Product</th>
-                <th>SubTotal</th>
+                <th className={styles.product}>Product</th>
+                <th className={styles.subtotal}>SubTotal</th>
               </tr>
-              <tr>
-                <td>Assorted coffee * 1</td>
-                <td>35</td>
+              </thead>
+              <tbody>
+              {Object.values(cartItems).map((thing) => (
+              <tr key={thing.id}>
+                <td>{`${thing.name} \u00D7  ${thing.quantity}`} </td>
+                <td className={styles.subTr}>
+                  {`$ ${thing.price * thing.quantity}`}
+                </td>
+                
               </tr>
-              <tr>
-                <td>SubTotal</td>
-                <td>35</td>
-              </tr>
-              <tr>
-                <td>Total</td>
-                <td>35</td>
-              </tr>
+              
+            ))}
+              </tbody>
+              <div className={styles.total}>
+              <h3> Total Price: </h3>
+              <h2>{`$ ${totalPrice}`}</h2>
+            </div>
             </table>
+            <form>
+            <input type='radio' name='payment' id='online' value='Online Payment' />
+            <label htmlFor='online'>Online Payment</label><br/><br/>
+            <input type='radio' name='payment' id='cash' value='Cash On Delivery' />
+            <label htmlFor='cash'>Cash On Delivery</label>
+            <Button type='submit' text='PLACE ORDER' />
+            </form>
+            
+
           </div>
         </div>
       </div>

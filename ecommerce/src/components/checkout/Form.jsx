@@ -1,3 +1,4 @@
+import Button from '../home/button/Button'
 import styles from './Form.module.css'
 
 
@@ -5,7 +6,6 @@ const Form = () => {
     
   return (
     <div className={styles.container}>
-        
       <form>
             <div className={styles.name}>
                 <div>
@@ -69,8 +69,10 @@ const Form = () => {
                 <label>Email address</label> <br/>
                 <input type='email' />
             </div>
-            <button type='submit'>Submit</button>
+            <Button type='submit' text='SUBMIT'/>
         </form>
+       
+
     </div>
   )
 }

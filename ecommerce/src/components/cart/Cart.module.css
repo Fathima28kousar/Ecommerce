@@ -26,12 +26,29 @@
             th,td{
                 padding: 10px;
                 text-align: center;
-                cursor: pointer;
+               
             }
 
-            img{
-                width: 100px;
+            td{
+                .thingName{
+                    color: #8BC34A;
+                }
+
+                .thingName:hover{
+                    color: #7fac4d;
+                }
             }
+            
+            div{
+                height: 100px;
+        
+                img{
+                    height: 100%;
+                    background-size: cover;
+                    cursor: pointer;
+                }
+            }
+
     
             th{
                 background-color: #ffffff;
