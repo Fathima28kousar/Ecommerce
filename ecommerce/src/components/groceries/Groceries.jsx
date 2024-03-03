@@ -1,14 +1,14 @@
 import styles from './Groceries.module.css'
-import Productlist from '../products/productlist/Productlist'
 import items from '../products/data'
+import Search from '../search/Search'
 
-const Everything = () => {
+const Groceries = () => {
     const reversedItems = items.slice().reverse()
   return (
-    <div className={styles.everything}>
-      <Productlist items={reversedItems}/>
+    <div className={styles.groceries}>
+      <Search items={reversedItems} />
     </div>
   )
 }
 
-export default Everything
+export default Groceries

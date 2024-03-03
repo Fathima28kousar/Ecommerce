@@ -1,15 +1,13 @@
-import styles from './Everything.module.css'
-import Productlist from '../products/productlist/Productlist'
+import styles from './Everything.module.css';
+import Search from "../search/Search";
 import items from '../products/data'
 
-
 const Everything = () => {
-  
   return (
     <div className={styles.everything}>
-      <Productlist items={items}/>
+      <Search items={items} />
     </div>
-  )
-}
+  );
+};
 
-export default Everything
+export default Everything;

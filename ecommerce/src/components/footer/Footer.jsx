@@ -2,6 +2,7 @@ import styles from "./Footer.module.css";
 import { Link } from "react-router-dom";
 import { FaTwitter,FaFacebook,FaInstagram,FaLinkedin } from "react-icons/fa";
 
+
 const Footer = () => {
   return (
     <div className={styles.footer}>
@@ -86,6 +87,7 @@ const Footer = () => {
            
         </div>
       </div>
+      
     </div>
   );
 };
