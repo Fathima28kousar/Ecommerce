@@ -14,7 +14,7 @@ const Fruits = () => {
             Ut sollicitudin quam vel purus tempus, vel eleifend felis varius.
           </p>
           <Button text="SHOP NOW" icon="arrow" />
-          <img src="/images/lemon.jpg" alt="" height="250px" />
+          <img src="/images/lemon.jpeg" alt="" height="250px" />
         </section>
         <section>
           <h3>Fresh Vegetables</h3>
