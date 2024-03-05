@@ -1,6 +1,6 @@
 .footer {
     background-color: #001524;
-    height: 110vh;  
+    height: 110%;  
     color: #FFFFFFA8;
     width:100%;
     line-height: 1.5rem;
@@ -108,5 +108,13 @@
         }
 
 
+    }
+}
+
+@media(max-width: 767px){
+    .footer{
+        .container{
+           
+        }
     }
 }

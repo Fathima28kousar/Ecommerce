@@ -11,7 +11,6 @@
         flex-direction: column;
         gap: 30px;
         padding: 50px;
-        /* background-color: yellow; */
 
 
         .sections{
@@ -84,20 +83,75 @@
             }
         }
     }
+
     .brands{
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 20px;
-        padding: 60px 10px;
+        gap: 10px;
+        padding: 50px 0;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            /* margin: 5px; */
+            min-height: 100px;
+            width: 160px;
+        }
+
+        h3{
+            font-size: 20px;
+        }
     }
 }
 
-@media (min-width: 1201px) {}
-@media (max-width: 1024px) {}
+@media(min-width:1200px){
+    .container{
+        .brands{
+            img{
+                width: 200px;
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 922px) and (max-width: 1024px) {
+
+    .container{
+        .customer{
+            padding: 15px;
+            .sections{
+                gap: 20px;
+                padding: 40px 15px;
+                section{
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
 
 @media (min-width: 768px) and (max-width: 921px) {
+    .container{
+        .customer{
+            padding: 40px 20px;
 
+            h1{
+                font-size: 25px;
+                text-align: center;
+            }
+            .sections{
+                gap:20px;
+                padding: 20px 10px;
+                section{
+                    padding: 10px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
 
 }
 
@@ -106,7 +160,7 @@
     .container{
         .customer{
             height: 100%;
-            padding: 100px 10px;
+            padding: 50px 10px;
 
             h1{
                 font-size: 25px;
@@ -121,7 +175,7 @@
                     margin-bottom: 25px;
                     height:auto;
                     font-size: 15px;
-                    padding: 0;
+                    padding: 10px 0;
                 }
                 .deal{
                     flex:2;
@@ -138,8 +192,16 @@
             }
         }
     }
+
+    .brands{
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+
+       h3{
+        width: 100%;
+        text-align: center;
+       }
+
+    }
 }
-
-
-
-@media(max-width: 480px){}
