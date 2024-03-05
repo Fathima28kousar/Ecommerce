@@ -4,6 +4,7 @@
     color: #FFFFFFA8;
     width:100%;
     line-height: 1.5rem;
+    max-width: 100%;
 
     h2 {
         color: white;
