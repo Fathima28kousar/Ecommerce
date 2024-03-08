@@ -1,12 +1,12 @@
 import styles from './PriceFilter.module.css'
 import React, { useState } from 'react';
 import Button from '../home/button/Button';
-import Productlist from './productlist/Productlist';
+// import Productlist from './productlist/Productlist';
 
 const PriceFilter = ({ items, onFilterChange }) => {
   const initialPriceRange = [0, 55]; // Set your initial price range here
   const [priceRange, setPriceRange] = useState(initialPriceRange);
-  const limitedItems = items.slice(2,5)
+  // const limitedItems = items.slice(2,5)
 
 
   const handleSliderChange = (e) => {
@@ -40,8 +40,8 @@ const PriceFilter = ({ items, onFilterChange }) => {
         className={styles.slider}
       />
       <div className={styles.inputs}>
-        <input type='text' value={minProductPrice}  disabled/>
-        <input type='text' value={priceRange[1]}  disabled/>
+        <input type='text' value={`$${minProductPrice}`}  disabled/>
+        <input type='text' value={`$${priceRange[1]}`}  disabled/>
       </div>
       
       <div className={styles.button}>
@@ -49,9 +49,9 @@ const PriceFilter = ({ items, onFilterChange }) => {
         <Button onClick={handleFilterChange} text='Apply Filter'/>
 
       </div>
-      <div className={styles.productList}>
+      {/* <div className={styles.productList}>
           <Productlist items={limitedItems} />
-        </div>
+        </div> */}
 
     </div>
     

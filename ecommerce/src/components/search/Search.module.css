@@ -7,9 +7,9 @@
     .search{
         display:flex;
         flex-direction: column;
-        width: 20%;
+        width: 30%;
         height: 100%;
-        padding-right: 30px;
+        padding: 0 30px;
         border-right: 2px solid #ddd;
 
         form{
@@ -67,9 +67,9 @@
         max-width: 100%;
 
         .search{
-            order:2;
             width: 100%;
             padding: 10px;
+            border-right: none;
 
             form{
                 width: 100%;

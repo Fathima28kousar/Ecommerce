@@ -3,17 +3,16 @@ import styles from './Form.module.css'
 
 
 const Form = () => {
-    
   return (
     <div className={styles.container}>
       <form>
             <div className={styles.name}>
-                <div>
+                <div className={styles.firstName}>
                     <label>First Name</label> <br/>
                     <input type='text' name='firstName' id='firstName' />
                 </div>
 
-                <div>
+                <div className={styles.lastName}>
                     <label>Last Name</label> <br/>
                     <input type='text' name='lastName' id='lastName'/>
                 </div>

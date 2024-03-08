@@ -1,4 +1,5 @@
 .checkout {
+  width: 100%;
   display: flex;
   padding: 20px;
   align-items: space-between;
@@ -76,3 +77,47 @@
     }
   }
 }
+
+@media(max-width: 921px){
+  .checkout{
+    padding: 10px;
+    .billingDetails{
+      flex-direction: column;
+      width: 100%;
+
+      .form{
+        width: 100%;
+        padding: 50px 25px;
+      }
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .checkout{
+      .billingDetails{
+        .form{
+          padding: 40px 15px;
+        }
+      }
+
+    }
+}
+
+@media(max-width: 319px){
+  .checkout{
+    padding: 5px;
+    .billingDetails{
+      .form{
+        padding: 30px 5px;
+      }
+      .order{
+        width:100%;
+      }
+    }
+
+
+
+    }
+}
+
