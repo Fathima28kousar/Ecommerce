@@ -9,7 +9,7 @@ const Address = () => {
           <h1>Get In Touch</h1>
         </div>
         <div className={styles.info}>
-          <section>
+        <section>
             <FaPhone className={styles.icon}/>
             <p>+123 456 7890</p>
             <p>+123 456 7890</p>

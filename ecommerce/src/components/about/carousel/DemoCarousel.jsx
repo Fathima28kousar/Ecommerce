@@ -10,7 +10,7 @@ const DemoCarousel = ({id}) => {
   ]
 
   return (
-    <div id={id}>
+    <div id={id} className={styles.container} >
       <div className={styles.containerStyles}>
         <ImageSlider slides={slides} />
       </div>

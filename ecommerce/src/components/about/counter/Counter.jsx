@@ -8,24 +8,27 @@ const Counter = () => {
   return (
     <ScrollTrigger onEnter={()=> setCounterOn(true)} onExit={()=>setCounterOn(false)}>
       <div className={styles.counter}>
-      <h3>Numbers Speak for Themselves!</h3>
 
-      <div className={styles.numbers}>
-        <h2> {counterOn && <Countup start={4800} end={5000} duration={1.5} delay={1}/>} + </h2>
-        <p>Curated Products</p>
-      </div>
-      
-      <div className={styles.numbers}>
-        <h2> {counterOn && <Countup start={0} end={800} duration={1.5} delay={1}/>} + </h2>
-        <p>Curated Products</p>
-      </div>
-      
-      <div className={styles.numbers}>
-        <h2> {counterOn && <Countup start={0} end={60} duration={2} delay={1}/>} + </h2>
-        <p>Product Categories</p>
-      </div>
+          <h3>Numbers Speak for Themselves!</h3>
 
-    </div>
+        <div className={styles.numberContainer}>
+        <div className={styles.numbers}>
+          <h2> {counterOn && <Countup start={4800} end={5000} duration={1.5} delay={1}/>} + </h2>
+          <p>Curated Products</p>
+        </div>
+        
+        <div className={styles.numbers}>
+          <h2> {counterOn && <Countup start={0} end={800} duration={1.5} delay={1}/>} + </h2>
+          <p>Curated Products</p>
+        </div>
+        
+        <div className={styles.numbers}>
+          <h2> {counterOn && <Countup start={0} end={60} duration={2} delay={1}/>} + </h2>
+          <p>Product Categories</p>
+        </div>
+        </div>
+        </div>
+        
     </ScrollTrigger>
     
   )

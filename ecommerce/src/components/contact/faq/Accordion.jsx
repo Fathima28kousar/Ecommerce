@@ -1,4 +1,3 @@
-// Accordion.jsx
 import styles from './Accordion.module.css';
 import { questions } from './api';
 import { useState } from 'react';

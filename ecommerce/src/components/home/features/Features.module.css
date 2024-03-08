@@ -86,7 +86,7 @@
 @media (min-width: 768px) and (max-width: 921px) {
   .container {
     .features {
-      padding: 20px;
+      padding: 20px ;
       height: auto;
       width: 100%;
       flex-wrap: wrap;
@@ -117,7 +117,8 @@
   .container {
     .features {
       display: block;
-      padding: 0;
+      padding: 15px 10px;
+
 
       section {
         width: 100%;

@@ -3,13 +3,13 @@ import { useSwipeable } from 'react-swipeable';
 import styles from './ImageSlider.module.css'
 
 const slideStyles = {
-  width: '100%',
+  maxWidth: '100%',
   height: '100%',
   borderRadius: '10px',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   transition: 'background-image 0.3s ease', 
-  cursor: 'pointer'
+  cursor: 'pointer',
 };
 
 const ImageSlider = ({ slides }) => {
@@ -37,6 +37,7 @@ const ImageSlider = ({ slides }) => {
   const slideStylesWidthBackground = {
     ...slideStyles,
     backgroundImage: `url(${slides[currentIndex].url})`,
+    
   };
 
   return (

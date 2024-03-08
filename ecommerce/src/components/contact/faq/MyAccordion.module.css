@@ -1,10 +1,10 @@
 .item {
-     max-height: 200px;
     .question{
         display:flex;
         justify-content: space-between;
         padding: 20px 40px;
         cursor: pointer;
+        
     }
 
     .answer{
@@ -16,5 +16,52 @@
         margin: 0 30px;
         border: 1px solid #ececec;
         
+    }
+}
+
+@media(min-width: 768px) and (max-width: 921px){
+    .item{
+        hr{
+            margin: 10px 30px;
+        }
+    }
+}
+
+@media(max-width: 767px){
+
+    .item{
+        max-height: 100%;
+        .question{
+            margin-top: 10px;
+            width: 100%;
+            padding: 20px;
+        }
+    
+        .answer{
+            padding: 20px;
+        }
+
+        hr{
+            margin: 10px 30px;
+        }
+    }
+    
+}
+
+@media(max-width: 319px){
+    .item{
+        .question{
+            margin-top: 10px;
+            width: 100%;
+            padding: 20px;
+        }
+    
+        .answer{
+            padding: 20px;
+        }
+
+        hr{
+            margin: 10px 30px;
+        }
     }
 }

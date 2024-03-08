@@ -1,0 +1,147 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 50px;
+  gap: 100px;
+  position: relative;
+
+  .carousel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 50px 30px;
+    gap: 15px;
+    background-color: #f8f6f3;
+    height: 40rem;
+    width: 45rem;
+    margin-top: 80px;
+    border: none;
+    border-radius: 10px;
+
+    #car {
+      position: absolute;
+      top: 0;
+      height: 550px;
+      border-radius: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #111111;
+      line-height: 24px;
+    }
+
+    .stars {
+      display: flex;
+      gap: 5px;
+      color: orange;
+    }
+
+    .review {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media(min-width: 1025px) and (max-width: 1200px){
+  .container{
+    gap:50px;
+
+    .carousel{
+      width: 90%;
+    }
+  }
+}
+
+@media(min-width: 922px) and (max-width: 1024px){
+  .container{
+    gap:50px;
+
+    .carousel{
+      width: 80%;
+      height: 40rem;
+    }
+  }
+}
+
+@media(min-width: 768px) and (max-width:921px){
+  .container{
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 40px;
+    .carousel{
+      width: 80%;
+      height: 35rem;
+    }
+  }
+}
+
+@media(max-width: 767px){
+  .container{
+    flex-direction: column;
+    height: 100%;
+    padding: 50px 25px;
+    .carousel{
+      padding: 20px 10px;
+      width: 35rem;
+      gap: 10px;
+      #car {
+        height: 35%;
+        width: 80%;
+        margin-top: 100px;
+      }
+    }
+  }
+}
+
+@media(max-width: 600px){
+  .container{
+    flex-direction: column;
+    height: 100%;
+    .carousel{
+      padding: 35px 0;
+      height: 32rem;
+      width: 100%;
+      text-align: center;
+      gap: 10px;
+
+      #car {
+        height: 35%;
+        width: 80%;
+        margin-top: 100px;
+      }
+    }
+  }
+}
+
+@media(max-width: 319px){
+  .container{
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    font-size: 15px;
+    
+    .carousel{
+      flex-direction: column;
+      padding: 10px 5px;
+      gap: 5px;
+      height: 35rem;
+      width: 100%;
+      margin-top: 0;
+      gap: 5px;
+
+      #car {
+        height: 35%;
+        width: 80%;
+      }
+      .stars{
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

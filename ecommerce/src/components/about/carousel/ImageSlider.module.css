@@ -25,3 +25,25 @@
         cursor: pointer;
     }
 }
+
+@media(max-width: 1024px){
+    .sliderStyles{
+        .leftArrowStyles{
+            font-size: 32px;
+        }
+        .rightArrowStyles{
+            font-size: 32px;
+        }
+    }
+}
+
+@media(max-width:767px){
+    .sliderStyles{
+        .leftArrowStyles{
+            font-size: 25px;
+        }
+        .rightArrowStyles{
+            font-size: 25px;
+        }
+    }
+}

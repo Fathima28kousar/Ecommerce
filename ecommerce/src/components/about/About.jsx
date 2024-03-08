@@ -1,11 +1,11 @@
-import Certificate from './certificate/Certificate'
+import SlidePage from './slidePage/SlidePage'
 import Main from './main/Main'
 
 const About = () => {
   return (
     <div>
       <Main/>
-      <Certificate/>
+      <SlidePage/>
     </div>
   )
 }
