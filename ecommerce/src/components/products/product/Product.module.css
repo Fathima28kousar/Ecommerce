@@ -35,10 +35,8 @@
     .product{
         flex-basis: calc(50% - 20px);
         max-width: calc(50% - 20px);
-        background-color: yellow;
         justify-content: center;
         align-items: center;
-        
     }
 }
 

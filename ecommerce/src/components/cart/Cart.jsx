@@ -55,25 +55,28 @@ const Cart = ({ cart, setCart }) => {
             <tbody>
               {Object.values(groupedCart).map((thing) => (
                 <tr key={thing.id} className={styles.cart}>
-                  <td>
+                  <td data-lable="Image">
                     <Link to={`/productDetail/${thing.id}`}>
                       <div>
                         <img src={thing.image1} alt="" />
                       </div>
                     </Link>
                   </td>
-                  <td>
+                  <td data-lable="Product">
                     <Link to={`/productDetail/${thing.id}`}>
                       <p className={styles.thingName}>{thing.name}</p>
                     </Link>
                   </td>
-                  <td>{thing.price}</td>
-                  <td>
+                  <td data-lable="Price">{thing.price}</td>
+                  <td data-lable="Quantity">
                     <p>{thing.quantity}</p>
                   </td>
-                  <td>{thing.price * thing.quantity}</td>
-                  <td>
-                    <FaTrash onClick={() => removeFromCart(thing.id)} />
+                  <td data-lable="Subtotal">{thing.price * thing.quantity}</td>
+                  <td data-lable="Delete">
+                    <FaTrash
+                      onClick={() => removeFromCart(thing.id)}
+                      className={styles.trash}
+                    />
                   </td>
                 </tr>
               ))}
@@ -81,8 +84,14 @@ const Cart = ({ cart, setCart }) => {
           </table>
           <div className={styles.total}>
             <div className={styles.subtotal}>
-              <p>Sub Total:{totalPrice}</p>
-              <p>Grand Total: {totalPrice}</p>
+              <div className={styles.subtotals}>
+                <p>Sub Total:</p>
+                <p>{totalPrice}</p>
+              </div>
+              <div className={styles.subtotals}>
+                <p>Grand Total:</p>
+                <p>{totalPrice}</p>
+              </div>
               <hr />
             </div>
             <Link
@@ -91,7 +100,7 @@ const Cart = ({ cart, setCart }) => {
                 state: { cartItems: groupedCart, totalPrice: totalPrice },
               }}
             >
-              <Button text="CHECKOUT" />
+              <Button text="CHECKOUT"/>
             </Link>
           </div>
         </div>
