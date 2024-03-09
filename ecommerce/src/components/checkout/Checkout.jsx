@@ -15,7 +15,7 @@ const Checkout = (props) => {
             <Form />
           </div>
           <div className={styles.order}>
-            <h3>Your order</h3>
+            <h3 className={styles.h3}>Your order</h3>
             <table>
               <thead>
               <tr>

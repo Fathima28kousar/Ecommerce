@@ -5,6 +5,8 @@
     background-color: #f8f6f3;
     padding: 100px 0;
     flex-direction: column;
+    width: 100%;
+    max-width: 100%;
     
     .empty{
         display: flex;
@@ -86,8 +88,13 @@
             }
         }
     }
+}
 
-    
-
+@media(max-width: 922px){
+    .container{
+        .table{
+            flex-direction: column;
+        }
+    }
 }
 

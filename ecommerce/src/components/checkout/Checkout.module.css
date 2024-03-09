@@ -1,27 +1,30 @@
 .checkout {
   width: 100%;
+  max-width: 100%;
   display: flex;
   padding: 20px;
-  align-items: space-between;
+  justify-content: center;
   flex-direction: column;
   background-color: #f8f6f4;
 
+  h1 {
+    padding-left: 20px;
+  }
   .billingDetails {
     display: flex;
     align-items: center;
     justify-content: center;
 
     .form {
-      width: 70%;
       padding: 50px;
+      flex: 1.1;
 
-      h3{
+      h3 {
         padding: 20px 0;
         border-bottom: 1px solid #ddd;
       }
     }
     .order {
-      width: 40%;
       height: 100%;
       border: 1px solid #ddd;
       display: flex;
@@ -29,95 +32,142 @@
       flex-direction: column;
       align-self: flex-start;
       gap: 20px;
-      padding: 20px 20px;
+      padding: 20px;
       font-size: 17px;
-      
+      flex: 1;
+
+      .h3{
+        padding-left: 10px;
+      }
 
       table {
         color: #3b3b3b;
+        width: 100%;
+        /* border-spacing: 10px; */
 
         .product {
-          padding-right: 300px;
+          text-align: left;
+          white-space: nowrap;
         }
 
         .subtotal {
-            align-self: flex-end;
+          text-align: right;
         }
 
         td {
           padding: 10px 0;
         }
 
-        .subTr{
-            text-align: right;
+        .subTr {
+          text-align: right;
+          white-space: nowrap;
         }
       }
-      .total{
+      .total {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 120%;
+        width: 130%;
         padding: 20px 0;
-        
-        h2{
-            align-self: flex-end;
-            font-family: 'Open Sans',sans-serif;
-            font-weight: 100;
-        }
-        h3{
-            font-size: 25px;
-        }
 
+        h2 {
+          font-family: "Open Sans", sans-serif;
+          font-weight: 100;
+          text-align: right;
+        }
+        h3 {
+          font-size: 25px;
+          text-align: left;
+        }
       }
-      Button{
+      Button {
         width: 100%;
-        margin-top: 20px ;
-        
-    }
+        margin-top: 20px;
+      }
     }
   }
 }
 
-@media(max-width: 921px){
-  .checkout{
+@media (max-width: 921px) {
+  .checkout {
     padding: 10px;
-    .billingDetails{
+
+    .billingDetails {
       flex-direction: column;
       width: 100%;
 
-      .form{
+      .form {
         width: 100%;
         padding: 50px 25px;
+      }
+
+      .order {
+        width: 100%;
+
+        table {
+          .product {
+            text-align: left;
+          }
+          .subtotal,.subtotal {
+            width: auto; /* or a percentage value */
+          }
+        }
       }
     }
   }
 }
 
-@media(max-width: 767px){
-  .checkout{
-      .billingDetails{
-        .form{
-          padding: 40px 15px;
+@media (max-width: 767px) {
+  .checkout {
+    .billingDetails {
+      .form {
+        padding: 40px 15px;
+      }
+      .order {
+        font-size: 15px;
+        padding: 20px 10px;
+
+        .total{
+          h3{
+            font-size: 20px;
+          }
+          h2{
+            font-size: 25px;
+          }
         }
       }
-
     }
+  }
 }
 
-@media(max-width: 319px){
-  .checkout{
+@media(max-width: 319px) {
+  .checkout {
+    h1 {
+      padding-left: 5px;
+    }
     padding: 5px;
-    .billingDetails{
-      .form{
+    .billingDetails {
+      .form {
         padding: 30px 5px;
       }
-      .order{
-        width:100%;
+    }
+    .order{
+      
+      table{
+        .subTr{
+          display: flex;
+          justify-content: space-between;
+        }
+
       }
+
+      .total{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+      
+      padding: 20px 0;
     }
-
-
-
-    }
+  }
 }
-
