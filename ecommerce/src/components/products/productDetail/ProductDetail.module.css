@@ -1,79 +1,138 @@
-.container{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    gap: 100px;
-    padding: 100px 50px;
-    width: calc(100vw-10px);
-    background-color: #f8f6f4;
-
-    .productImg{
-        height: 120%;
-        width: 100%;
-
-        img{
-            height: auto;
-            width: 100%;
-        }
-    }
-
-    .productCont{
-        height: 120%;
-        width: 100%;
+.mainContainer{
+    .container{
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 15px;
-        align-self: flex-start;
-
-        .prodName{
+        align-items: center;
+        height: 100%;
+        gap: 70px;
+        padding: 50px 30px;
+        width: 100%;
+        background-color: #f8f6f4;
+    
+        .productImg{
+            height: 120%;
+            width: 100%;
+            flex:1;
+    
+            img{
+                height: auto;
+                width: 100%;
+            }
+        }
+    
+        .productCont{
+            height: 120%;
+            width: 100%;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 15px;
+            align-self: flex-start;
+            background-color: pink;
+            flex:1;
+    
+            .prodName{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .shipping{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+            }
+    
+            .addToCart{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                
+                Button{
+                   margin-left: 20px;
+                }
+    
+                input{
+                    padding: 10px;
+                }
+            }
+    
+    
+            h1{
+                font-size: 30px;
+            }
+            h4{
+                font-size: 24px;
+                font-family: "Open Sans",sans-serif;
+            }
+    
+            p{
+                line-height: 20px;
+                font-weight: 100;
+                font-size: 20px;
+            }
+    
+            Button {
+                width: 300px; 
+               
+            }
         }
-
-        .shipping{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-
-        h1{
-            font-size: 30px;
-        }
-        h4{
-            font-size: 24px;
-            font-family: "Open Sans",sans-serif;
-        }
-
-        p{
-            line-height: 20px;
-            font-weight: 100;
-            font-size: 20px;
-        }
-
-        Button {
-            width: 300px; 
-           
-        }
+    
+       
+    }
+    .description{
+        background-color: pink;
     }
 }
-@media(max-width: 922px){
-    .container{
-        flex-direction: column;
-        padding: 20px;
-        
-        .productImg{
-            /* width: 100%; */
-            /* width: 350px; */
-            /* height: 200px; */
-            
-            
-            
+
+
+
+@media(min-width: 768px) and (max-width: 921px){
+    .mainContainer{
+        .container{
+            gap:25px;
+            padding: 40px 25px;
+    
+            .productCont{
+                h1{
+                    font-size: 28px;
+                }
+                h4{
+                    font-size: 22px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
         }
     }
+    
+}
+
+@media(max-width: 767px){
+    .mainContainer{
+        .container{
+            flex-direction: column;
+            padding: 20px;
+            
+            .productImg{
+                pointer-events: none;
+            }
+    
+            .productCont{
+                h1{
+                    font-size: 28px;
+                }
+                h4{
+                    font-size: 22px;
+                }
+                p{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    
 }
