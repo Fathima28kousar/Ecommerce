@@ -107,6 +107,7 @@
             h1{
                 font-size: 30px;
                 padding: 70px;
+                width:100%;
             }
         }
         .about{
@@ -159,5 +160,17 @@
                 }
             }
         }
+    }
+}
+
+@media(max-width: 200px){
+    .main{
+        .text{
+            h1{
+                text-align: center;
+                padding: 70px 10px;
+            }
+        }
+
     }
 }

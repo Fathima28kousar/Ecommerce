@@ -249,9 +249,23 @@
 
         .end{
             padding: 10px 0;
-
+            p{
+                text-align: center;
+            }
             .social{
                 gap: 10px;
+            }
+        }
+    }
+}
+
+@media(max-width: 200px){
+    .footer{
+        .container{
+            .section1{
+                img{
+                    width: 100px;
+                }
             }
         }
     }

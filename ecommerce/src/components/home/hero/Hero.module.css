@@ -97,4 +97,14 @@
     }
 }
 
+@media(max-width: 200px){
+    .hero{
+        overflow: hidden;
+        .content{
+            h1{
+                font-size: 20px;
+            }
+        }
+    }
+}
 

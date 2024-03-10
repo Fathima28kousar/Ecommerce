@@ -16,8 +16,8 @@ const Address = () => {
           </section>
           <section>
             <FaEnvelope className={styles.icon}/>
-            <p>info@example.com</p>
-            <p>support@example.com</p>
+            <p className={styles.email}>info@OS.com</p>
+            <p className={styles.email}>support@OS.com</p>
           </section>
           <section>
             <FaMapMarkerAlt className={styles.icon}/>

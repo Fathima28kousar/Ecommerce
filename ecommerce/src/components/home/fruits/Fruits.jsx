@@ -4,7 +4,7 @@ import ProductList from "../../products/productlist/Productlist";
 import items from "../../products/data";
 
 const Fruits = () => {
-  const oddItems = items.filter((item, index) => index % 2 !== 0 && index < 8);
+  const oddItems = items.filter((item, index) => index % 2 !== 0 && index < 7);
   return (
     <div className={styles.container}>
       <div className={styles.fruits}>

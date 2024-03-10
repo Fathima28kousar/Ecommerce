@@ -10,7 +10,7 @@ import ProductList from "../../products/productlist/Productlist";
 import items from "../../products/data";
 
 const Features = () => {
-  const limitedItems = items.slice(1, 5);
+  const limitedItems = items.slice(1, 4);
   return (
     <div className={styles.container}>
       <div className={styles.features}>
@@ -57,7 +57,7 @@ const Features = () => {
       <div className={styles.sellingProducts}>
         <h2>Best Selling Products</h2>
         <img src="/images/leaf.png" alt="" />
-        <ProductList items={limitedItems} />
+        <ProductList items={limitedItems}/>
       </div>
     </div>
   );

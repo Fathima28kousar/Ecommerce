@@ -49,9 +49,6 @@ const PriceFilter = ({ items, onFilterChange }) => {
         <Button onClick={handleFilterChange} text='Apply Filter'/>
 
       </div>
-      {/* <div className={styles.productList}>
-          <Productlist items={limitedItems} />
-        </div> */}
 
     </div>
     

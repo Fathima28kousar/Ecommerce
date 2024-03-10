@@ -100,6 +100,7 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
         
       </div>
       <div className={styles.description}>
+        <h4>Description</h4>
         <p>{selectedItem.description}</p>
       </div>
     </div>

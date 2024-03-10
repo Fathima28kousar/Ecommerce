@@ -173,22 +173,30 @@
                 width: 120px;
             }
         }
-        .dropDownMenu{
-            margin-right: 0;
-        }
+      .dropDownMenu{
+          margin-right: 0;
+      }
+      
     }
     
 }
 
 @media (max-width:319px){
     .navbar{
+      padding: 15px 10px;
         .header{
             img{
-                width: 120px;
+                width: 100px;
+                padding-right: 0;
             }
         }
         .dropDownMenu{
             margin-right: 0;
+        }
+
+        .toggleButton {
+          background-color: #8bc34a;
+          padding: 10px 8px;
         }
     }
 }

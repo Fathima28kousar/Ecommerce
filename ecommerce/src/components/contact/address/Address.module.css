@@ -26,9 +26,9 @@
             padding: 100px 30px 70px 30px;
             border-radius: 10px;
             position: absolute;
-            background-color: white; /* Add a background color to the info section */
+            background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2);
-            top: 300px; /* Adjust the top property to position the info section */
+            top: 300px; 
             
             section{
                 border: 1px solid #ccc;
@@ -42,7 +42,6 @@
                 gap: 2px;
                 flex-wrap: wrap;
                 
-                 
                 .icon{
                     font-size: 36px;
                     color: #8bc34a;
@@ -133,10 +132,48 @@
 
 @media(max-width: 380px){
     .container{
-        
+        .address{
+            .header{
+                h1{
+                    text-align: center;
+                    font-size: 25px;
+                }
+            }
+            .info{
+                section{
+                    flex-wrap: wrap;
+                    text-align: center;
+                    
+                    .icon{
+                        font-size: 25px;
+                        flex-wrap: wrap;
+                        p{
+                            flex-wrap: wrap;
+                            font-size: 14.5px;
+                            white-space: nowrap; 
+                        }
+                    }
+                }
+            }
+        }
         .faq{
             h1{
                 font-size: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:200px){
+    .container{
+        overflow: hidden;
+        .address{
+            .info{
+                section{
+                    text-wrap: wrap;
+                    overflow: hidden; 
+                   
+                }
             }
         }
     }

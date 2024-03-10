@@ -205,3 +205,27 @@
 
     }
 }
+
+@media(max-width: 200px){
+    .container{
+        overflow: hidden;
+        .customer{
+            h1{
+                font-size: 20px;
+            }
+            .sections{
+                section{
+                    
+                    width: 100px;
+                }
+                .deal{
+                    h1{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

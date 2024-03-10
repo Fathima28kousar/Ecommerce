@@ -171,3 +171,9 @@
     }
   }
 }
+
+@media(max-width: 220px){
+  .checkout{
+    overflow: hidden;
+  }
+}

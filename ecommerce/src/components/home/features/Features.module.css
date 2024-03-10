@@ -36,6 +36,7 @@
     flex-direction: column;
     gap: 20px;
     padding: 100px 0;
+    width: 100%;
 
     h2 {
       font-size: 32px;
@@ -134,5 +135,22 @@
         }
       }
     }
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    .sellingProducts{
+      h2{
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media(max-width: 200px){
+  .container{
+    overflow: hidden;
   }
 }
