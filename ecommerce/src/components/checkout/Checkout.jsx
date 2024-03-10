@@ -35,11 +35,12 @@ const Checkout = (props) => {
               
             ))}
               </tbody>
-              <div className={styles.total}>
+
+            </table>
+            <div className={styles.total}>
               <h3> Total Price: </h3>
               <h2>{`$ ${totalPrice}`}</h2>
             </div>
-            </table>
             <form>
             <input type='radio' name='payment' id='online' value='Online Payment' />
             <label htmlFor='online'>Online Payment</label><br/><br/>
