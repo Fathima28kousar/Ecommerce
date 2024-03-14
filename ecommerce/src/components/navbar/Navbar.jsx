@@ -13,7 +13,7 @@ const Navbar = ({ cart }) => {
   const closeDropDown =() => {
     setIsOpen(false)
   }
-
+  const cartLength = cart.reduce((total, item) => total + item.quantity, 0);
   // useEffect(() => {
   //   const handleResize = () => {
   //     if (window.innerWidth <= 921) {
@@ -32,7 +32,7 @@ const Navbar = ({ cart }) => {
     <div>
       <nav className={styles.navbar}>
         <div className={styles.header}>
-          <Link to="/index">
+          <Link to="/">
             <img src="/images/logo.svg" alt="" />
           </Link>
           <ul className={styles.groceries}>
@@ -43,7 +43,7 @@ const Navbar = ({ cart }) => {
               <Link to="/Groceries">Groceries</Link>
             </li>
             <li>
-              <Link to="/">Juice</Link>
+              <Link to="/juice">Juice</Link>
             </li>
           </ul>
         </div>
@@ -62,7 +62,7 @@ const Navbar = ({ cart }) => {
             <li className={styles.icon}>
               <Link to="/cart">
                 <FaShoppingBasket />
-                {cart.length}
+                {cartLength}
               </Link>
             </li>
             <li className={styles.profile}>

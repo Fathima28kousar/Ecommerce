@@ -29,9 +29,18 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
   const addToCart = () => {
     const { id, price, name, description, image1 } = selectedItem;
     const obj = { id, price, name, description, image1, quantity };
-    setCart((prevCart) => [...prevCart, ...Array(quantity).fill(obj)]);
+
+    const existingIndex = cart.findIndex(item => item.id === id);  // Check if the item already exists in the cart
+    if (existingIndex !== -1){   // If the item exists, update its quantity
+      const updatedCart = [...cart];
+      updatedCart[existingIndex].quantity += quantity;
+      setCart(updatedCart);
+    }else{
+      setCart(prevCart => [...prevCart, obj]);
+    }
     setCount((prevCount) => prevCount + quantity);
     setProductTotalInCart((prevTotal) => prevTotal + quantity);
+    
 
     console.log("cart element", cart);
     toast.success(` ${quantity} item Added !`, {
@@ -90,7 +99,7 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
             <input
               type="number"
               min="1"
-              max="30"
+              max="100"
               value={quantity}
               onChange={handleQuantityChange}
             />

@@ -21,24 +21,17 @@ const Search = ({ items }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-
-    // Check if the search input is not empty
     if (search.trim() !== "") {
-      // Find the first item that matches the search query
-      const searchedItem = items.find((item) =>
+      const searchedItem = items.find((item) =>   // Find the first item that matches the search query
         item.name.toLowerCase().includes(search.toLowerCase())
       );
-
-      if (searchedItem) {
-        // Navigate to the product detail page with the id of the searched item
+      if (searchedItem) {  // Navigate to the product detail page with the id of the searched item
         history.push(`/productDetail/${searchedItem.id}`);
       } else {
-        // Set itemFound state to false if the searched item is not found
-        setItemFound(false);
+        setItemFound(false);  // Set itemFound state to false if the searched item is not found
       }
     } else {
-      // If the search input is empty, set itemFound to true (show the original product list)
-      setItemFound(true);
+      setItemFound(true); // If the search input is empty, set itemFound to true (show the original product list)
     }
   };
 

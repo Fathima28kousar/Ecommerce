@@ -13,24 +13,14 @@ const Cart = ({ cart, setCart }) => {
   };
 
   let totalPrice = 0;
-
-  // Grouping cart items by id
-  const groupedCart = cart.reduce((acc, thing) => {
-    if (acc[thing.id]) {
-      acc[thing.id].quantity += thing.quantity;
-    } else {
-      acc[thing.id] = { ...thing };
-    }
-    return acc;
-  }, {});
-
-  Object.values(groupedCart).forEach((thing) => {
-    totalPrice += thing.price * thing.quantity;
+  cart.forEach((item) => {
+    totalPrice += item.price * item.quantity
   });
+
 
   return (
     <div className={styles.container}>
-      {Object.values(groupedCart).length === 0 ? (
+      {cart.length === 0 ? (
         <>
           <div className={styles.empty}>
             <h1>Your Cart is Empty</h1>
@@ -53,51 +43,72 @@ const Cart = ({ cart, setCart }) => {
               </tr>
             </thead>
             <tbody>
-              {Object.values(groupedCart).map((thing) => (
-                <tr key={thing.id} className={styles.cart}>
-                  <td data-lable="Image">
-                    <Link to={`/productDetail/${thing.id}`}>
-                      <div>
-                        <img src={thing.image1} alt="" />
-                      </div>
-                    </Link>
-                  </td>
-                  <td data-lable="Product">
-                    <Link to={`/productDetail/${thing.id}`}>
-                      <p className={styles.thingName}>{thing.name}</p>
-                    </Link>
-                  </td>
-                  <td data-lable="Price">{thing.price}</td>
-                  <td data-lable="Quantity">
-                    <p>{thing.quantity}</p>
-                  </td>
-                  <td data-lable="Subtotal">{thing.price * thing.quantity}</td>
-                  <td data-lable="Delete">
-                    <FaTrash
-                      onClick={() => removeFromCart(thing.id)}
-                      className={styles.trash}
-                    />
-                  </td>
-                </tr>
-              ))}
+              {
+                cart.map((item,index) => {
+                return(
+                  <tr key={index} className={styles.cart}>
+                    <td data-lable="Image">
+                      <Link to={`/productDetail/${item.id}`}>
+                        <div>
+                          <img src={item.image1} alt={item.name} />
+                        </div>
+                      </Link>
+                    </td>
+                    <td data-lable="Product">
+                      <Link to={`/productDetail/${item.id}`}>
+                        <p className={styles.thingName}>{item.name}</p>
+                      </Link>
+                    </td>
+                    <td data-lable="Price">{item.price}</td>
+                    <td data-lable="Quantity">
+                    <div className={styles.quantity}>
+                          <button className={styles.minus} 
+                            onClick={() => {
+                              let newcart = [...cart]
+                              if(newcart[index].quantity >1 ){
+                                newcart[index].quantity -= 1
+                                setCart(newcart)
+                              }
+                            }}
+                          >-</button>
+                          <span>{item.quantity}</span>
+                          <button className={styles.plus}
+                          onClick={()=>{
+                            let newcart = [...cart]
+                            newcart[index].quantity += 1
+                            setCart(newcart)
+                          }}
+                          >+</button>
+                        </div>
+                    </td>
+                    <td data-lable="Subtotal">{item.price * item.quantity}</td>
+                    <td data-lable="Delete">
+                      <FaTrash
+                        onClick={() => removeFromCart(item.id)}
+                        className={styles.trash}
+                      />
+                    </td>
+                  </tr>
+                )
+              })}
             </tbody>
           </table>
           <div className={styles.total}>
             <div className={styles.subtotal}>
               <div className={styles.subtotals}>
                 <p>Sub Total:</p>
-                <p>{totalPrice}</p>
+                <p>{` $${totalPrice}`}</p>
               </div>
               <div className={styles.subtotals}>
                 <p>Grand Total:</p>
-                <p>{totalPrice}</p>
+                <p>{` $${totalPrice}`}</p>
               </div>
               <hr />
             </div>
             <Link
               to={{
                 pathname: "/checkout",
-                state: { cartItems: groupedCart, totalPrice: totalPrice },
+                state: { cartItems: cart, totalPrice: totalPrice },
               }}
             >
               <Button text="CHECKOUT"/>
@@ -106,7 +117,7 @@ const Cart = ({ cart, setCart }) => {
         </div>
       )}
 
-      {Object.values(groupedCart).length !== 0 && (
+      {cart.length !== 0 && (
         <div>
           <Button onClick={() => setCart([])} text="CLEAR CART" />
         </div>

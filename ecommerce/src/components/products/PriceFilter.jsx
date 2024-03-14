@@ -1,12 +1,10 @@
 import styles from './PriceFilter.module.css'
 import React, { useState } from 'react';
 import Button from '../home/button/Button';
-// import Productlist from './productlist/Productlist';
 
 const PriceFilter = ({ items, onFilterChange }) => {
   const initialPriceRange = [0, 55]; // Set your initial price range here
   const [priceRange, setPriceRange] = useState(initialPriceRange);
-  // const limitedItems = items.slice(2,5)
 
 
   const handleSliderChange = (e) => {
@@ -33,7 +31,7 @@ const PriceFilter = ({ items, onFilterChange }) => {
       <h2>Filter by price</h2>
       <input
         type="range"
-        min={15}
+        min={minProductPrice}
         max={maxProductPrice}
         value={priceRange[1]}
         onChange={handleSliderChange}
@@ -47,9 +45,7 @@ const PriceFilter = ({ items, onFilterChange }) => {
       <div className={styles.button}>
         <Button onClick={handleClearFilter} text='Clear Filter'/>
         <Button onClick={handleFilterChange} text='Apply Filter'/>
-
       </div>
-
     </div>
     
     </>

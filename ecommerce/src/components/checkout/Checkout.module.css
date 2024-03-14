@@ -43,7 +43,6 @@
       table {
         color: #3b3b3b;
         width: 100%;
-        /* border-spacing: 10px; */
 
         .product {
           text-align: left;
@@ -67,7 +66,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 130%;
+        width: 100%;
         padding: 20px 0;
 
         h2 {

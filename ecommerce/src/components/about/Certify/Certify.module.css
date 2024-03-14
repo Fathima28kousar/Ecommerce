@@ -1,11 +1,13 @@
 .certificate {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   gap: 30px;
   width: 100%;
   max-width: 100%;
+  padding: 0 0 200px;
+  text-align: left;
 
   .heading {
     display: flex;
@@ -22,7 +24,16 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 10px;
+      h2{
+        font-size: 25px;
+      }
     }
+  }
+
+  h1{
+    padding-left: 100px;
+    width: 100%;
+    text-align: center;
   }
 
   .list {
@@ -30,6 +41,7 @@
     justify-content: center;
     align-items: center;
     gap: 65px;
+    font-size: 20px;
 
     ul {
       li {
@@ -45,23 +57,24 @@
 @media (min-width: 922px) and (max-width: 1024px) {
   .certificate {
     gap: 25px;
-    padding: 10px;
   }
 
   h1 {
     font-size: 28px;
+    padding-left: 0;
   }
 }
 
 @media (min-width: 768px) and (max-width: 921px) {
   .certificate {
-    padding: 20px 10px;
     gap: 15px;
+
+
     .heading {
       gap: 0;
       .text {
         h2 {
-          font-size: 20px;
+          font-size: 25px;
         }
         p {
           font-size: 15px;
@@ -70,13 +83,15 @@
     }
 
     h1 {
-      font-size: 25px;
+      font-size: 24px;
+      text-align: center;
+      padding-left: 0;
     }
 
     .list {
       ul {
         li {
-          font-size: 15px;
+          font-size: 17px;
         }
       }
     }
@@ -107,6 +122,7 @@
     h1 {
       font-size: 25px;
       text-align: center;
+      padding-left: 0;
     }
   }
 }
@@ -114,12 +130,14 @@
   .certificate {
     .list {
       gap: 45px;
+      font-size: 18px;
     }
   }
 }
 
 @media (max-width: 420px) {
   .certificate {
+    padding: 0 15px 100px;
     .heading {
       gap: 10px;
       .text {
@@ -138,6 +156,7 @@
     .list {
       gap: 20px;
       display: block;
+      font-size: 16px;
     }
     Button {
       min-width: 100px;
