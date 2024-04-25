@@ -15,6 +15,7 @@ import Checkout from "./components/checkout/Checkout";
 import Juice from "./components/everything/Juice"
 import SuccessPage from "./components/SuccessPage";
 import COD from "./components/COD";
+import Form from "./components/checkout/Form";
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
         <Route path="/checkout" component={Checkout} />
         <Route path="/success" component={SuccessPage} />
         <Route path="/cod-success" component={COD} />
+        <Route path="/form" component={Form} />
       </Switch>
       <Footer />
      

@@ -22,6 +22,8 @@ const Checkout = (props) => {
     paymentMethod: 'Online Payment',
 })
 
+
+
 const handleChange = (e) => {
   const { name, value } = e.target;
   if (name === "payment") {
@@ -32,8 +34,22 @@ const handleChange = (e) => {
 }
 
 // Function to handle form submission
-const handleSubmit = (event) => {
+const handleSubmit = async (event) => {
   event.preventDefault();
+  if (
+    formData.firstName === "" ||
+    formData.lastName === "" ||
+    formData.email === "" ||
+    formData.pincode === "" ||
+    formData.address === "" ||
+    formData.phone === "" ||
+    formData.country === "" ||
+    formData.state === ""
+) {
+    console.log("Please fill out all the form fields");
+    return; // Exit early if any field is empty
+}
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   console.log("Form submitted with data:", formData);
   if (formData.paymentMethod === 'Cash On Delivery') {
       history.push('/cod-success'); // Redirect to a page for COD success
@@ -60,6 +76,8 @@ const handleSubmit = (event) => {
           </div>
           <div className={styles.order}>
             <h3 className={styles.h3}>Your order</h3>
+            {Object.keys(cartItems).length > 0 ?(
+              <>
             <table>
               <thead>
                 <tr>
@@ -82,7 +100,7 @@ const handleSubmit = (event) => {
               <h3> Total Price: </h3>
               <h2>{`$ ${totalPrice}`}</h2>
             </div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
                 type="radio"
                 name="payment"
@@ -104,9 +122,11 @@ const handleSubmit = (event) => {
                 onChange={handleChange}
               />
               <label htmlFor="cash">Cash On Delivery</label>
-              <Button type='submit' text='PLACE ORDER' onClick={handleSubmit} />
+              <Button type='submit' text='PLACE ORDER'  />
             </form>
+            </>):(<p>Your cart is empty.</p>)}
           </div>
+          
         </div>
       </div>
     </div>
