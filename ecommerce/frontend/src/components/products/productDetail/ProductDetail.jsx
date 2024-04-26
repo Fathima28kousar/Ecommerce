@@ -35,8 +35,11 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
       const updatedCart = [...cart];
       updatedCart[existingIndex].quantity += quantity;
       setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
     }else{
       setCart(prevCart => [...prevCart, obj]);
+      
+      
     }
     setCount((prevCount) => prevCount + quantity);
     setProductTotalInCart((prevTotal) => prevTotal + quantity);

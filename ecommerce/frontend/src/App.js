@@ -16,6 +16,7 @@ import Juice from "./components/everything/Juice"
 import SuccessPage from "./components/SuccessPage";
 import COD from "./components/COD";
 import Form from "./components/checkout/Form";
+import { useEffect } from "react";
 
 
 const App = () => {
@@ -23,6 +24,14 @@ const App = () => {
   const [count, setCount] = useState(0);
   console.log(cart)
   console.log(cart.length)
+
+
+  useEffect(() => {
+    const storedCart = localStorage.getItem('cart');
+    if (storedCart) {
+      setCart(JSON.parse(storedCart));
+    }
+  }, []);
 
   return (
     <div>
@@ -49,8 +58,10 @@ const App = () => {
         </Route>
         <Route path="/checkout" component={Checkout} />
         <Route path="/success" component={SuccessPage} />
-        <Route path="/cod-success" component={COD} />
-        <Route path="/form" component={Form} />
+        {/* <Route path="/cod-success" component={COD} /> */}
+        {/* <Route path="/billingDetails" component={Form} /> */}
+        <Route path="/billingDetails"><Form setCart={setCart}/></Route>
+        <Route path="/cod-success"><COD setCart={setCart}/></Route>
       </Switch>
       <Footer />
      

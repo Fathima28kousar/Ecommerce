@@ -3,10 +3,10 @@ import styles from './Form.module.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
-import Checkout from './Checkout'
 
 
-const Form = () => {
+
+const Form = ({ setCart }) => {
 
     const [firstName,setFirstName] = useState("")
     const [lastName,setLastName] = useState("")
@@ -16,11 +16,28 @@ const Form = () => {
     const [phone,setPhone] = useState("")
     const [apartment,setApartment] = useState("")
     const [city,setCity] = useState("")
-
+    const [formErrors, setFormErrors] = useState({});
     const history = useHistory()
 
     const handleSubmit = async(e) => {
         e.preventDefault();
+
+        if (!firstName || !lastName || !emails || !pincode || !address || !phone || !apartment || !city) {
+            // Set form errors for empty fields
+            setFormErrors({
+                firstName: !firstName ? '*This field is required' : '',
+                lastName: !lastName ? '*This field is required' : '',
+                emails: !emails ? '*This field is required' : '',
+                pincode: !pincode ? '*This field is required' : '',
+                address: !address ? '*This field is required' : '',
+                phone: !phone ? '*This field is required' : '',
+                apartment: !apartment ? '*This field is required' : '',
+                city: !city ? '*This field is required' : ''
+            });
+            return;
+        }
+
+
 
         try{
             let formField = new FormData()
@@ -40,8 +57,10 @@ const Form = () => {
                 data: formField
             }).then((response) => {
                 console.log(response.data);
-                history.push('/checkout')
+                history.push('/cod-success')
             })
+            // Clear the cart after successful order
+            setCart([]); // Set cart to an empty array
         }
        
         catch (error) {
@@ -61,6 +80,8 @@ const Form = () => {
 
 
 
+
+
   return (
     <div className={styles.container}>
       <form action="http://127.0.0.1:8000/api/" method="post" onSubmit={handleSubmit}>
@@ -68,34 +89,44 @@ const Form = () => {
                 <div className={styles.firstName}>
                     <label>First Name</label> <br/>
                     <input type='text' name='firstName' required id='firstName' value={firstName} onChange={(e) => setFirstName(e.target.value)} />
+                    {formErrors.firstName && <em className={styles.error}>{formErrors.firstName}</em>}
                     
                 </div>
 
                 <div className={styles.lastName}>
                     <label>Last Name</label> <br/>
                     <input type='text' name='lastName' id='lastName' value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+                    {formErrors.lastName && <em className={styles.error}>{formErrors.lastName}</em>}
                 </div>
             </div>
             <div >
                 <label>Street address</label> <br/>
-                <input type='text' name='apartment' value={apartment} onChange={(e) => setApartment(e.target.value)} placeholder='House number and apartment name' /> <br/> <br/>
+                <input type='text' name='apartment' value={apartment} onChange={(e) => setApartment(e.target.value)} placeholder='House number and apartment name' />
+                {formErrors.apartment && <em className={styles.error}>{formErrors.apartment}</em>} <br/> <br/>
+                
+
                 <input type='text' name='address' value={address} onChange={(e) => setAddress(e.target.value)} placeholder='Street Address'/>
+                {formErrors.address && <em className={styles.error}>{formErrors.address}</em>}
             </div>
             <div>
                 <label>Town/City</label> <br/>
                 <input type='text' name='city' value={city} onChange={(e) => setCity(e.target.value)}/>
+                {formErrors.city && <em className={styles.error}>{formErrors.city}</em>}
             </div>
             <div>
                 <label>PIN Code</label> <br/>
                 <input type='number' name='pincode' value={pincode} onChange={(e) => setPincode(e.target.value)}/>
+                {formErrors.pincode && <em className={styles.error}>{formErrors.pincode}</em>}
             </div>
             <div>
                 <label>Phone</label> <br/>
                 <input type='tel' name='phone' value={phone} onChange={(e) => setPhone(e.target.value)} />
+                {formErrors.phone && <em className={styles.error}>{formErrors.phone}</em>}
             </div>
             <div>
                 <label>Email address</label> <br/>
                 <input type='email' name='emails' value={emails} onChange={(e) => setEmail(e.target.value)} />
+                {formErrors.emails && <em className={styles.error}>{formErrors.emails}</em>}
             </div>
             <Button type='submit' text='SUBMIT' onClick={handleSubmit}/>
             

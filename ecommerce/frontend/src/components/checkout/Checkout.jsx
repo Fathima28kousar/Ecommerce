@@ -7,6 +7,7 @@ import { useHistory } from "react-router-dom";
 const Checkout = (props) => {
   const { cartItems = {} } = props.location.state || {};
   const { totalPrice = {} } = props.location.state || {};
+  console.log(props.location.state);
 
   const history = useHistory();
 
@@ -36,28 +37,29 @@ const handleChange = (e) => {
 // Function to handle form submission
 const handleSubmit = async (event) => {
   event.preventDefault();
-  if (
-    formData.firstName === "" ||
-    formData.lastName === "" ||
-    formData.email === "" ||
-    formData.pincode === "" ||
-    formData.address === "" ||
-    formData.phone === "" ||
-    formData.country === "" ||
-    formData.state === ""
-) {
-    console.log("Please fill out all the form fields");
-    return; // Exit early if any field is empty
-}
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+//   if (
+//     formData.firstName === "" ||
+//     formData.lastName === "" ||
+//     formData.email === "" ||
+//     formData.pincode === "" ||
+//     formData.address === "" ||
+//     formData.phone === "" ||
+//     formData.country === "" ||
+//     formData.state === ""
+// ) {
+//     console.log("Please fill out all the form fields");
+//     return; // Exit early if any field is empty
+// }
+  // await new Promise((resolve) => setTimeout(resolve, 1000));
   console.log("Form submitted with data:", formData);
   if (formData.paymentMethod === 'Cash On Delivery') {
-      history.push('/cod-success'); // Redirect to a page for COD success
+      history.push('/billingDetails'); // Redirect to a page for COD success
   } else {
       // Further processing, such as sending data to backend for online payment
       history.push('/success'); // Redirect to a generic success page
   }
 };
+
 
  
   return (
@@ -67,12 +69,13 @@ const handleSubmit = async (event) => {
         <div className={styles.billingDetails}>
           <div className={styles.form}>
             <h3>Billing details</h3>
-            <Form
+            {/* <Form
               formData={formData}
               handleChange={handleChange}
               cartItems={cartItems}
               totalPrice={totalPrice}
-            />
+              
+            /> */}
           </div>
           <div className={styles.order}>
             <h3 className={styles.h3}>Your order</h3>

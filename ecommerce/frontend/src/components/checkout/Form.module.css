@@ -3,10 +3,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  background-color: #F8F6F3;
+  padding:  10px 40px;
+  margin: 0 auto;
+  
 
   form {
-    width: 100%;
+    width: 70%;
 
     div {
       margin-bottom: 15px;
@@ -60,12 +63,25 @@
         width: 100%;
       }
     }
+    em{
+      color: rgb(214, 5, 5);
+    }
+  }
+}
+
+@media (max-width: 921px){
+  .container{
+    width: 100%;
+    form {
+      width: 85%;
+    }
   }
 }
 
 @media (max-width: 767px) {
   .container {
     form {
+      width: 100%;
       .name {
         gap: 40px;
       }
@@ -75,7 +91,9 @@
 
 @media (max-width: 480px) {
   .container {
+    padding: 40px 20px;
     form {
+      
       label {
         font-size: 13px;
       }
