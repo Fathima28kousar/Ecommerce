@@ -1,6 +1,5 @@
 import styles from "./Checkout.module.css";
 import Button from "../home/button/Button";
-import Form from "./Form";
 import { useState,useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 
@@ -56,7 +55,8 @@ const handleSubmit = async (event) => {
       history.push('/billingDetails'); // Redirect to a page for COD success
   } else {
       // Further processing, such as sending data to backend for online payment
-      history.push('/success'); // Redirect to a generic success page
+      history.push('/success', { totalPrice}); // Redirect to a generic success page
+
   }
 };
 

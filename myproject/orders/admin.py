@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Customer
+from .models import Customer,Transaction
 
 
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ['address', 'firstName', 'lastName','emails','pincode','apartment','phone']
 
 admin.site.register(Customer,CustomerAdmin)
-# admin.site.register(Product)
+admin.site.register(Transaction)
 # admin.site.register(Order)
 # admin.site.register(OrderItem)

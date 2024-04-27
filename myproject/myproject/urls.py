@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from orders.views import validate_checkout, CustomerView
+from orders.views import *
 from rest_framework import routers
 
 
@@ -25,7 +25,13 @@ route.register("",CustomerView,basename='CustomerView')
 
 
 urlpatterns = [
+
     path('admin/', admin.site.urls),
-    path('validate_checkout/', validate_checkout, name='validate_checkout'),
     path('api/', include(route.urls)),
+    path('razorpay/',include('orders.urls'))
+    # path('api/create-order/', create_order, name='create_order'),
+    # path('api/payment-success/', payment_success, name='payment_success'),
+    # path('api/create_order/', CreateOrderAPIView.as_view(), name='create_order'),
+    # path('payment_success/', PaymentSuccessAPIView.as_view(), name='payment_success'),
+
 ]
