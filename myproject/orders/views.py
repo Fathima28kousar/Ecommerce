@@ -23,16 +23,20 @@ def start_payment(request):
     client = razorpay.Client(auth=('rzp_test_wucadtaz2NQLqm', 'Un2BvQcbNWU4MpjvhlF28G9W'))
 
     payment = client.order.create({
-        'amount': int(amount) * 100,
+        'amount': int(float(amount)) * 100,
         'currency': 'INR',
         'payment_capture': '1'})
     
-    order = Transaction.objects.create(
-        name=name,
-        amount=amount,
-        razorpay_payment_id=payment['id'])
+
+    razorpay_payment_id = payment['id']
+    order_status = payment['status']
+    if order_status == 'created':
+        order = Transaction.objects.create(
+            name=name,
+            amount=amount,
+            razorpay_payment_id=razorpay_payment_id)
     
-    serializer = TransactionSerializer(order)
+        serializer = TransactionSerializer(order)
 
     data = {
         "payment": payment,
@@ -40,46 +44,71 @@ def start_payment(request):
     }
     return Response(data)
 
+
 @api_view(['POST'])
 def handle_payment_success(request):
     # request.data is coming from frontend
     res = json.loads(request.data["response"])
+    print(res)
 
     ord_id = ""
     raz_pay_id = ""
     raz_signature = ""
 
+    data = {}
+
     for key in res.keys():
         if key == 'razorpay_order_id':
+            # data['razorpay_order_id'] = val
             ord_id = res[key]
         elif key == 'razorpay_payment_id':
+            # data['razorpay_payment_id'] = val
             raz_pay_id = res[key]
         elif key == 'razorpay_signature':
+            # data['razorpay_signature'] = val
             raz_signature = res[key]
 
-    order = Transaction.objects.get(razorpay_payment_id=ord_id)
 
     data = {
         'razorpay_order_id': ord_id,
         'razorpay_payment_id': raz_pay_id,
         'razorpay_signature': raz_signature
     }
+    print(data)
+
+    order = Transaction.objects.filter(razorpay_payment_id=raz_pay_id).first()
+    if order:
+        order.paid = True
+        order.save()
+    else:
+        return Response({'error': 'Transaction not found'}, status=status.HTTP_404_NOT_FOUND)
+
 
     client = razorpay.Client(auth=('rzp_test_wucadtaz2NQLqm', 'Un2BvQcbNWU4MpjvhlF28G9W'))
-
     check = client.utility.verify_payment_signature(data)
 
+    print(check)
     if check is not None:
         print("Redirect to error url or error page")
         return Response({'error': 'Something went wrong'})
     
-    order.isPaid = True
-    order.save()
+   
 
     res_data = {
     'message': 'payment successfully received!'
     }
     return Response(res_data)
+
+    
+
+
+
+
+
+
+
+
+
 
 class CustomerView(viewsets.ModelViewSet):
     queryset = Customer.objects.all()
